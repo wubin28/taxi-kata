@@ -25,4 +25,14 @@ public class TaximeterTest {
     public void 停车等待时加收每分钟0点25元() {
         assertEquals(12.25, Taximeter.tick(9, 1), 0.005);
     }
+
+    @Test
+    public void 最后计价的时候司机会四舍五入只收到元_四舍() {
+        assertEquals(12, TaxiDriver.fare(Taximeter.tick(9, 1)));
+    }
+
+    @Test
+    public void 最后计价的时候司机会四舍五入只收到元_五入() {
+        assertEquals(13, TaxiDriver.fare(Taximeter.tick(9, 2)));
+    }
 }
