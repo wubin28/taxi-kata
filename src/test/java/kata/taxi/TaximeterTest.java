@@ -11,4 +11,10 @@ public class TaximeterTest {
     {
         assertEquals(6, Taximeter.tick(1), 0.005);
     }
+
+    @Test
+    public void 超过2公里时每公里0点8元()
+    {
+        assertEquals(6.8, Taximeter.tick(3), 0.005);
+    }
 }
