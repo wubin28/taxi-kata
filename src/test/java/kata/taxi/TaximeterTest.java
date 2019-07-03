@@ -17,4 +17,10 @@ public class TaximeterTest {
     {
         assertEquals(6.8, Taximeter.tick(3), 0.005);
     }
+
+    @Test
+    public void 超过8公里则每公里加收百分之50长途费()
+    {
+        assertEquals(12, Taximeter.tick(9), 0.005);
+    }
 }

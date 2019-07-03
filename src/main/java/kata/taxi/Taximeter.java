@@ -9,6 +9,9 @@ public class Taximeter {
         if (distance <= INITIAL_CHARGE_DISTANCE) {
             return INITIAL_CHARGE;
         }
-        return 0.8 * (distance - INITIAL_CHARGE_DISTANCE) + INITIAL_CHARGE;
+        if (distance <= 8) {
+            return INITIAL_CHARGE + 0.8 * (distance - INITIAL_CHARGE_DISTANCE);
+        }
+        return INITIAL_CHARGE + 0.8 * (8 - INITIAL_CHARGE_DISTANCE) + 0.8 * (distance - 8) * 1.5;
     }
 }
